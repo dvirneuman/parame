@@ -1,0 +1,176 @@
+{
+    "type": "object",
+    "properties": {
+        "videotestsrc0": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "default": "videotestsrc0",
+                    "type": "string"
+                },
+                "blocksize": {
+                    "default": 4096,
+                    "type": "number"
+                },
+                "num-buffers": {
+                    "default": 20,
+                    "type": "number"
+                },
+                "typefind": {
+                    "default": false,
+                    "type": "bool"
+                },
+                "do-timestamp": {
+                    "default": false,
+                    "type": "bool"
+                },
+                "pattern": {
+                    "default": "smpte",
+                    "enum": [
+                        "smpte",
+                        "snow",
+                        "black",
+                        "white",
+                        "red",
+                        "green",
+                        "blue",
+                        "checkers-1",
+                        "checkers-2",
+                        "checkers-4",
+                        "checkers-8",
+                        "circular",
+                        "blink",
+                        "smpte75",
+                        "zone-plate",
+                        "gamut",
+                        "chroma-zone-plate",
+                        "solid-color",
+                        "ball",
+                        "smpte100",
+                        "bar",
+                        "pinwheel",
+                        "spokes",
+                        "gradient",
+                        "colors"
+                    ],
+                    "type": "string"
+                },
+                "timestamp-offset": {
+                    "default": 0,
+                    "type": "number"
+                },
+                "is-live": {
+                    "default": false,
+                    "type": "bool"
+                },
+                "k0": {
+                    "default": 0,
+                    "type": "number"
+                },
+                "kx": {
+                    "default": 0,
+                    "type": "number"
+                },
+                "ky": {
+                    "default": 0,
+                    "type": "number"
+                },
+                "kt": {
+                    "default": 0,
+                    "type": "number"
+                },
+                "kxt": {
+                    "default": 0,
+                    "type": "number"
+                },
+                "kyt": {
+                    "default": 0,
+                    "type": "number"
+                },
+                "kxy": {
+                    "default": 0,
+                    "type": "number"
+                },
+                "kx2": {
+                    "default": 0,
+                    "type": "number"
+                },
+                "ky2": {
+                    "default": 0,
+                    "type": "number"
+                },
+                "kt2": {
+                    "default": 0,
+                    "type": "number"
+                },
+                "xoffset": {
+                    "default": 0,
+                    "type": "number"
+                },
+                "yoffset": {
+                    "default": 0,
+                    "type": "number"
+                },
+                "foreground-color": {
+                    "default": 4294967295,
+                    "type": "number"
+                },
+                "background-color": {
+                    "default": 4278190080,
+                    "type": "number"
+                },
+                "horizontal-speed": {
+                    "default": 0,
+                    "type": "number"
+                },
+                "animation-mode": {
+                    "default": "frames",
+                    "enum": [
+                        "frames",
+                        "wall-time",
+                        "running-time"
+                    ],
+                    "type": "string"
+                },
+                "motion": {
+                    "default": "wavy",
+                    "enum": [
+                        "wavy",
+                        "sweep",
+                        "hsweep"
+                    ],
+                    "type": "string"
+                },
+                "flip": {
+                    "default": false,
+                    "type": "bool"
+                }
+            }
+        },
+        "autovideosink0": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "default": "autovideosink0",
+                    "type": "string"
+                },
+                "async-handling": {
+                    "default": false,
+                    "type": "bool"
+                },
+                "message-forward": {
+                    "default": false,
+                    "type": "bool"
+                },
+                "sync": {
+                    "default": true,
+                    "type": "bool"
+                },
+                "ts-offset": {
+                    "default": 0,
+                    "type": "number"
+                }
+            }
+        }
+    }
+}

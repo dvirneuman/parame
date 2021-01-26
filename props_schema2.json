@@ -1,0 +1,24 @@
+{
+    "type": "object",
+    "properties": {
+        "videotestsrc0": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "default": "videotestsrc0",
+                    "type": "string"
+                },
+                "blocksize": {
+                    "default": 4096,
+                    "type": "number"
+                },
+                "num-buffers": {
+                    "default": 20,
+                    "type": "number",
+                    "maximum": 100,
+                    "minimum": 10
+                }
+            }
+        } 
+    }
+}
