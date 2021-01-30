@@ -1,6 +1,10 @@
-from config import Config
+import os
+import shutil
 
-class Daemon(Config):
+from config import Config
+from fs_config import FsConfig
+
+class Daemon(FsConfig):
     def __init__(self, schema_file):
         super().__init__(schema_file)
         self.add_read_callback('/videotestsrc0/num-buffers', self.read_num_buffers)
@@ -18,13 +22,19 @@ class Daemon(Config):
     
     def write_block_size(self, location, value):
         if value % 1024:
-            print("block must be multiply of 1024")
-            return 1024
+            raise ValueError("block must be multiply of 1024")
         else:
             print('write')
             return value
 
 d = Daemon('props_schema2.json')
+try:
+    shutil.rmtree('conf/')
+except FileNotFoundError:
+    pass
+
+d.deploy_to_fs('conf/')
+d.serve()
 
 print(d.config)
 d.set_value('/videotestsrc0/num-buffers', '51')

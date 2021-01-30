@@ -40,22 +40,22 @@ class Config(object):
         try:
             value = self._convert_value_type(location, value)
         except Exception as e:
-            print(f'{location}: could not set to {value}. reason: {e}')
-            return False
+            print(f'{location}: could not set to {value}. reason: {repr(e)}')
+            raise e
         
         tree = self._generate_tree(location, value)
         try:
             jsonschema.validate(tree, self.schema)
         except jsonschema.exceptions.ValidationError as e:
-            print(e)
-            return False
+            print(sys.exc_info(e)[2])
+            raise e
         
         callback = self._find_closest_callback(location, is_read=False)
         if callback:
             value = callback(location, value)
 
         self.direct_set_by_path(location, value)
-        return True 
+        return value 
 
     def get_value(self, location):
         callback = self._find_closest_callback(location, is_read=True)
